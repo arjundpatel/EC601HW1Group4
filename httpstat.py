@@ -341,15 +341,7 @@ def main():
         b0003=fmtb(d['time_starttransfer']),
         b0004=fmtb(d['time_total']),
     )
-    X=['DNS Lookup','TCP Connection','SSL Handshake','Server Processing','Content Transfer']  
-    Y=[range_dns,range_connection,range_ssl,range_server,range_transfer]    
-    fig = plt.figure()  
-    plt.bar(X,Y,0.4,color="green")  
-    plt.xlabel("X-axis")  
-    plt.ylabel("Y-axis")  
-    plt.title("bar chart") 
-    plt.show()    
-    plt.savefig("barChart.jpg")
+    
     print()
     print(stat)
 
