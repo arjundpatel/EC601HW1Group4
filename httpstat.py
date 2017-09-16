@@ -17,6 +17,7 @@ import subprocess
 import numpy as np    
 import matplotlib.mlab as mlab    
 import matplotlib.pyplot as plt
+from colorama import Fore, Back, Style
 
 
 __version__ = '1.2.1'
