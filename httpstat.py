@@ -92,13 +92,14 @@ http_template = """
 ISATTY = sys.stdout.isatty()
 
 
-def make_color(code):
-    def color_func(s):
-        if not ISATTY:
-            return s
-        tpl = '\x1b[{}m{}\x1b[0m'
-        return tpl.format(code, s)
-    return color_func
+#def make_color(code):
+#    def color_func(s):
+#        if not ISATTY:
+#            return s
+#        tpl = '\x1b[{}m{}\x1b[0m'
+#        return tpl.format(code, s)
+#    return color_func
+
 
 
 red = make_color(31)
@@ -110,11 +111,17 @@ cyan = make_color(36)
 orange = make_color(37)
 grey = make_color(38)
 
-bold = make_color(1)
-underline = make_color(4)
 
-grayscale = {(i - 232): make_color('38;5;' + str(i)) for i in xrange(232, 256)}
+#bold = make_color(1)
+#underline = make_color(4)
 
+#grayscale = {(i - 232): make_color('38;5;' + str(i)) for i in xrange(232, 256)}
+
+# New color
+from colorama import Fore, Back, Style
+print(Fore.RED + 'some red text')
+print(Back.GREEN + 'and with a green background')
+print(Style.DIM + 'and in dim text')
 
 def quit(s, code=0):
     if s is not None:
@@ -341,6 +348,7 @@ def main():
         b0003=fmtb(d['time_starttransfer']),
         b0004=fmtb(d['time_total']),
     )
+
     X=['DNS Lookup','TCP Connection','SSL Handshake','Server Processing','Content Transfer']  
     Y=[range_dns,range_connection,range_ssl,range_server,range_transfer]    
     fig = plt.figure()  
