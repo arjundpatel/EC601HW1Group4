@@ -14,6 +14,9 @@ import sys
 import logging
 import tempfile
 import subprocess
+import numpy as np    
+import matplotlib.mlab as mlab    
+import matplotlib.pyplot as plt
 from colorama import Fore, Back, Style
 
 
@@ -98,12 +101,16 @@ ISATTY = sys.stdout.isatty()
 #    return color_func
 
 
-#red = (31)
-#green = make_color(32)
-#yellow = make_color(33)
-#blue = make_color(34)
-#magenta = make_color(35)
-#cyan = make_color(36)
+
+red = make_color(31)
+green = make_color(32)
+yellow = make_color(33)
+blue = make_color(34)
+magenta = make_color(35)
+cyan = make_color(36)
+orange = make_color(37)
+grey = make_color(38)
+
 
 #bold = make_color(1)
 #underline = make_color(4)
@@ -341,7 +348,16 @@ def main():
         b0003=fmtb(d['time_starttransfer']),
         b0004=fmtb(d['time_total']),
     )
-    
+
+    X=['DNS Lookup','TCP Connection','SSL Handshake','Server Processing','Content Transfer']  
+    Y=[range_dns,range_connection,range_ssl,range_server,range_transfer]    
+    fig = plt.figure()  
+    plt.bar(X,Y,0.4,color="green")  
+    plt.xlabel("X-axis")  
+    plt.ylabel("Y-axis")  
+    plt.title("bar chart") 
+    plt.show()    
+    plt.savefig("barChart.jpg")
     print()
     print(stat)
 
