@@ -102,7 +102,7 @@ green = make_color(32)
 yellow = make_color(33)
 blue = make_color(34)
 magenta = make_color(35)
-cyan = make_color(36)
+cyan = make_color(37)
 
 bold = make_color(1)
 underline = make_color(4)
