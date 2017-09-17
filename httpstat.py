@@ -74,15 +74,15 @@ https_template = """
                                                                                  total:{b0004}
 """[1:]
 
-http_template = """
-  DNS Lookup   TCP Connection   Server Processing   Content Transfer
-[   {a0000}  |     {a0001}    |      {a0003}      |      {a0004}     ]
-             |                |                   |                  |
-    namelookup:{b0000}        |                   |                  |
-                        connect:{b0001}           |                  |
-                                      starttransfer:{b0003}          |
-                                                                 total:{b0004}
-"""[1:]
+## http_template = """
+##  DNS Lookup   TCP Connection   Server Processing   Content Transfer
+## [   {a0000}  |     {a0001}    |      {a0003}      |      {a0004}     ]
+##             |                |                   |                  |
+##    namelookup:{b0000}        |                   |                  |
+##                        connect:{b0001}           |                  |
+##                                      starttransfer:{b0003}          |
+##                                                                 total:{b0004}
+## """[1:]
 
 
 # Color code is copied from https://github.com/reorx/python-terminal-color/blob/master/color_simple.py
