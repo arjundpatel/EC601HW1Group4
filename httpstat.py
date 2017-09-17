@@ -102,7 +102,7 @@ ISATTY = sys.stdout.isatty()
 
 
 
-red = make_color(31)
+red = make_color(30)
 green = make_color(32)
 yellow = make_color(33)
 blue = make_color(34)
